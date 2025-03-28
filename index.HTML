@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Aposentadoria</title>
+</head>
+<body>
+
+    <h2>Verificar Elegibilidade para Aposentadoria</h2>
+    <label for="idade">Idade:</label>
+    <input type="number" id="idade" placeholder="Digite sua idade">
+    
+    <label for="contribuicao">Tempo de Contribuição (anos):</label>
+    <input type="number" id="contribuicao" placeholder="Digite o tempo de contribuição">
+
+    <button onclick="verificarAposentadoria()">Verificar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function verificarAposentadoria() {
+            let idade = parseInt(document.getElementById("idade").value);
+            let contribuicao = parseInt(document.getElementById("contribuicao").value);
+            let resultado = document.getElementById("resultado");
+
+            if (idade >= 65 || contribuicao >= 30) {
+                resultado.innerText = "Você pode se aposentar.";
+            } else {
+                resultado.innerText = "Você ainda não pode se aposentar.";
+            }
+        }
+    </script>
+
+</body>
+</html>
+
